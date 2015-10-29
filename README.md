@@ -1,0 +1,2 @@
+# mucoopApp
+barcodescanner for stock
