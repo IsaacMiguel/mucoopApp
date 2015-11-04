@@ -19,17 +19,44 @@
     <script src="js/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
 
+    <script src="js/ajax.js"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
   <body ng-app="starter">
-
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">BarcodeScanner Mucoop</h1>
       </ion-header-bar>
       <ion-content ng-controller="ExampleController">
-        <button class="button" ng-click="scanBarcode()">Scan</button>
+        <select id="sucursal" name="sucursal" class="inputs_controls">
+          <option value="0" selected="">Seleccionar</option>
+          <option value="casacentral">Ramallo Villa</option>
+          <option value="salto">Salto</option>
+          <option value="express">Express</option>
+          <option value="ramallo">Ramallo Pueblo</option>
+          <option value="ocampo">M Ocampo</option>
+          <option value="lucia">Santa Lucia</option>
+          <option value="perez">Perez Millan</option>
+          <option value="paraiso">El Paraiso</option>
+        </select>
+        
+        <button id="scan_btn" class="button inputs_controls" ng-click="scanBarcode()">Scan</button>
+
+        <div class="row" style="background-color: #3BABD7">
+          <div class="col">Scanner</div>
+          <div class="col">Cod. 3</div>
+          <div class="col col-25">Nombre</div>
+          <div class="col">P.vta</div>
+          <div class="col">C.Real</div>
+          <div class="col">Stock</div>
+          <div class="col">ult.Comp.</div>
+        </div>
+
+        <div class="row" id="contenidoFiltro">
+          
+        </div>
       </ion-content>
     </ion-pane>
   </body>

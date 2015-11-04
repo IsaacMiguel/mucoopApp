@@ -1,1 +1,27 @@
 /* Empty. Add your own CSS if you like */
+.pane{
+	height: 100%;
+	width: 100%;
+	background-color: #313739;	
+}
+
+.inputs_controls{
+	height: 100px;
+	width: 35%;
+	margin-left: 10%;
+	margin-top: 30px;
+	font-size: 200%;
+}
+
+#scan_btn{
+	background-color: #3BABD7;
+}
+
+.bar.bar-stable{
+	background-color: #3BABD7;
+}
+
+.row{
+	margin-top: 30px;
+	background-color: white;
+}

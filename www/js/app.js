@@ -21,10 +21,31 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova'])
 exampleApp.controller("ExampleController", function($scope, $cordovaBarcodeScanner){
   $scope.scanBarcode = function(){
     $cordovaBarcodeScanner.scan().then(function(imageData){
-      alert(imageData.text);
-      console.log("format " + imageData.format);
-    },function(error){
-      console.log("un error ha sucedido " + error);
+      var sucursal = "";
+      var str = "";
+      var producto = "";
+
+      sucursal = $('#sucursal').val();
+      str = imageData.text;
+      producto = str.substring(0,12);
+
+      if (producto != "") {
+        $.post("http://www.mucoop.com.ar/stockApp" ,
+          {
+            sucursal:sucursal,
+            producto:producto
+          }, function(data){
+            if (data != false) {
+              $('#contenidoFiltro').html(data);
+            }else{
+              $('#contenidoFiltro').html("no hay coincidencias en stock" + data);
+              }
+            }  
+          );
+      };
+
+    },function (error){
+      $('#contenidoFiltro').html("hubo un error" + error);
     });
   }
 });
