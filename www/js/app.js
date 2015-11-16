@@ -30,7 +30,7 @@ exampleApp.controller("ExampleController", function($scope, $cordovaBarcodeScann
       producto = str.substring(0,12);
 
       if (producto != "") {
-        $.post("http://www.mucoop.com.ar/stockApp" ,
+        $.post("url" ,
           {
             sucursal:sucursal,
             producto:producto
